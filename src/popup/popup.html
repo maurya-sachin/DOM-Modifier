@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DOM Modifier</title>
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <h1>DOM Modifier</h1>
+      <p id="stats">Loading...</p>
+      <label class="toggle">
+        <input id="extensionEnabled" type="checkbox" />
+        <span>Enable extension</span>
+      </label>
+      <button id="openSettings">Open settings</button>
+    </main>
+
+    <script src="../shared/storage.js"></script>
+    <script src="./popup.js"></script>
+  </body>
+  </html>
