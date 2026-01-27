@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DOM Modifier Settings</title>
+    <link rel="stylesheet" href="./options.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="hero">
+        <h1>DOM Modifier</h1>
+        <p>Configure URL-based CSS rules for any site.</p>
+        <label class="toggle">
+          <input id="extensionEnabled" type="checkbox" />
+          <span>Enable extension globally</span>
+        </label>
+      </header>
+
+      <section class="card">
+        <h2>Add New Rule</h2>
+        <form id="ruleForm">
+          <input id="editId" name="editId" type="hidden" />
+          <div class="grid">
+            <label>
+              Rule Name
+              <input id="name" name="name" placeholder="Stacking context fix" required />
+            </label>
+            <label>
+              URL Pattern
+              <input id="urlPattern" name="urlPattern" placeholder="*://example.com/*" required />
+            </label>
+          </div>
+          <div class="grid">
+            <label>
+              CSS Selector
+              <input id="selector" name="selector" placeholder=".tsqd-parent-container" required />
+            </label>
+            <label class="checkbox">
+              <input id="enabled" name="enabled" type="checkbox" checked />
+              <span>Enabled</span>
+            </label>
+          </div>
+          <label>
+            CSS Declarations
+            <textarea
+              id="cssText"
+              name="cssText"
+              rows="4"
+              placeholder="position: relative; z-index: 10;"
+              required
+            ></textarea>
+          </label>
+          <div class="actions">
+            <button id="submitButton" type="submit">Save Rule</button>
+            <button id="cancelEditButton" type="button" class="secondary hidden">Cancel Edit</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Existing Rules</h2>
+        <p id="emptyState" class="muted">No rules yet. Add one above.</p>
+        <ul id="rulesList" class="rules"></ul>
+      </section>
+    </main>
+
+    <script src="../shared/storage.js"></script>
+    <script src="./options.js"></script>
+  </body>
+  </html>
