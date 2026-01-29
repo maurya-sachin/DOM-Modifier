@@ -1,8 +1,7 @@
 (() => {
   const STORAGE_KEY = "domModifierSettings";
   const DEFAULT_SETTINGS = { extensionEnabled: true, rules: [] };
-  const AREA =
-    chrome.storage && chrome.storage.session ? "session" : "sync";
+  const AREA = "local";
   const store = chrome.storage[AREA];
 
   async function getSettings() {
