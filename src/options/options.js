@@ -49,10 +49,13 @@
 
   function createRuleCard(rule, settings) {
     const li = document.createElement("li");
-    li.className = "rule";
+    li.className = `rule${rule.enabled ? "" : " disabled"}`;
     li.innerHTML = `
       <div class="rule-head">
-        <strong>${esc(rule.name)}</strong>
+        <span class="rule-name">
+          <span class="rule-status ${rule.enabled ? "active" : "inactive"}"></span>
+          ${esc(rule.name)}
+        </span>
         <div class="rule-actions">
           <button class="secondary" data-action="toggle">
             ${rule.enabled ? "Disable" : "Enable"}

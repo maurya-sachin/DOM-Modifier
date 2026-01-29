@@ -9,11 +9,14 @@
   <body>
     <main class="container">
       <header class="hero">
-        <h1>DOM Modifier</h1>
-        <p>Configure URL-based CSS rules for any site.</p>
-        <label class="toggle">
+        <div class="hero-text">
+          <h1>DOM Modifier</h1>
+          <p>Configure URL-based CSS rules for any site.</p>
+        </div>
+        <label class="switch">
           <input id="extensionEnabled" type="checkbox" />
-          <span>Enable extension globally</span>
+          <span class="switch-track"></span>
+          <span>Enabled</span>
         </label>
       </header>
 
@@ -24,21 +27,24 @@
           <div class="grid">
             <label>
               Rule Name
-              <input id="name" name="name" placeholder="Stacking context fix" required />
+              <input id="name" name="name" placeholder="e.g. Hide sidebar" required />
             </label>
             <label>
               URL Pattern
-              <input id="urlPattern" name="urlPattern" placeholder="*://example.com/*" required />
+              <input id="urlPattern" name="urlPattern" placeholder="*example.com*" required />
             </label>
           </div>
           <div class="grid">
             <label>
               CSS Selector
-              <input id="selector" name="selector" placeholder=".tsqd-parent-container" required />
+              <input id="selector" name="selector" placeholder=".sidebar" required />
             </label>
             <label class="checkbox">
-              <input id="enabled" name="enabled" type="checkbox" checked />
-              <span>Enabled</span>
+              <label class="switch">
+                <input id="enabled" name="enabled" type="checkbox" checked />
+                <span class="switch-track"></span>
+                <span>Enabled</span>
+              </label>
             </label>
           </div>
           <label>
@@ -46,8 +52,8 @@
             <textarea
               id="cssText"
               name="cssText"
-              rows="4"
-              placeholder="position: relative; z-index: 10;"
+              rows="3"
+              placeholder="display: none !important;"
               required
             ></textarea>
           </label>
@@ -60,7 +66,7 @@
 
       <section class="card">
         <h2>Existing Rules</h2>
-        <p id="emptyState" class="muted">No rules yet. Add one above.</p>
+        <p id="emptyState" class="muted">No rules yet — add one above to get started.</p>
         <ul id="rulesList" class="rules"></ul>
       </section>
     </main>
@@ -68,4 +74,4 @@
     <script src="../shared/storage.js"></script>
     <script src="./options.js"></script>
   </body>
-  </html>
+</html>
