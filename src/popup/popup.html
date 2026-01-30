@@ -8,16 +8,18 @@
   </head>
   <body>
     <main class="popup">
-      <h1>DOM Modifier</h1>
-      <p id="stats">Loading...</p>
-      <label class="toggle">
-        <input id="extensionEnabled" type="checkbox" />
-        <span>Enable extension</span>
-      </label>
-      <button id="openSettings">Open settings</button>
+      <div class="popup-header">
+        <h1>DOM Modifier</h1>
+        <label class="switch">
+          <input id="extensionEnabled" type="checkbox" />
+          <span class="switch-track"></span>
+        </label>
+      </div>
+      <p id="stats" class="stats">Loading...</p>
+      <button id="openSettings">Open Settings</button>
     </main>
 
     <script src="../shared/storage.js"></script>
     <script src="./popup.js"></script>
   </body>
-  </html>
+</html>
