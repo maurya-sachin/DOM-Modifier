@@ -166,8 +166,17 @@ button.danger:hover {
   transition: border-color var(--transition), opacity var(--transition);
 }
 
+.rule:hover {
+  border-color: #334155;
+}
+
 .rule.disabled {
-  opacity: 0.5;
+  opacity: 0.45;
+  border-style: dashed;
+}
+
+.rule.disabled:hover {
+  opacity: 0.6;
 }
 
 .rule-head {
