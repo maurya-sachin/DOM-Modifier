@@ -40,6 +40,8 @@ h2 {
   font-size: 1.05rem;
   font-weight: 600;
   margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
 }
 
 /* ── Form ── */
@@ -119,6 +121,11 @@ button[type="submit"]:hover,
 button.primary:hover {
   background: #7dd3fc;
   box-shadow: 0 0 16px var(--accent-glow);
+}
+
+button[type="submit"]:active,
+button.primary:active {
+  transform: scale(0.97);
 }
 
 button.secondary {
