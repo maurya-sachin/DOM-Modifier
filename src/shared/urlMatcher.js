@@ -4,7 +4,13 @@
   function wildcardToRegExp(pattern) {
     const p = pattern.trim();
     if (!p || p === "*") return /^.*$/i;
-    return new RegExp(`^${escapeRegex(p).replace(/\\\*/g, ".*")}$`, "i");
+
+    const hasWildcard = p.includes("*");
+    if (hasWildcard) {
+      return new RegExp(`^${escapeRegex(p).replace(/\\\*/g, ".*")}$`, "i");
+    }
+
+    return new RegExp(`^${escapeRegex(p)}`, "i");
   }
 
   function doesUrlMatch(url, pattern) {
